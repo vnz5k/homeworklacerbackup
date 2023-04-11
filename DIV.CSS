@@ -1,0 +1,78 @@
+/* 1. Poner un borde al tercer div del índice */
+div:nth-child(3) {
+  border: 2px solid #000;
+}
+
+/* 2. Estilizar el H1 dentro de un header */
+header > h1 {
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+header > h1::first-letter {
+  font-size: 1.2em;
+  text-transform: capitalize;
+}
+
+/* 3. Estilizar los 3 divs dentro del tercer div */
+div:nth-child(3) > div {
+  border: 2px solid #000;
+}
+
+div:nth-child(3) > div > div:first-child {
+  /* Ajustar el tamaño de las imágenes */
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+div:nth-child(3) > div > div:nth-child(2) p {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* 4. Aplicar patrones especificados */
+/* a. E F + G > I */
+/* No se especificó el uso de este patrón, por lo tanto, no se aplica */
+
+/* b. Selecciona el n-esimo hijo por lo menos 3 */
+:nth-child(n+3) {
+  /* Aquí puedes aplicar los estilos que desees */
+}
+
+/* c. Estilos para elementos de formulario */
+/* i. E:link */
+a:link {
+  color: #0000ff;
+}
+
+/* ii. E:Visited check box */
+input[type="checkbox"]:visited {
+  /* No es posible aplicar estilos a un checkbox visitado, puedes aplicar estilos a un enlace visitado */
+}
+
+/* iii. E:Active */
+*:active {
+  background-color: #ccc;
+}
+
+/* iv. E:hover */
+*:hover {
+  border-color: #f00;
+}
+
+/* v. E:focus */
+*:focus {
+  background-color: #ff0;
+  border-color: #0f0;
+}
+
+/* d. Estilos para elementos precedidos por un header */
+article section > :is(header) ~ * {
+  font-size: 1.2em;
+}
+
+/* e. Estilos para elementos h2 */
+h2 {
+  font-size: 0.8em;
+}
